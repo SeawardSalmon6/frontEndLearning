@@ -20,40 +20,7 @@
 
 body {
     background-color: var(--background-color);
-}
-
-/* Background Elements */
-.circle-1 {
-    background-color: var(--circle1-color);
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
-    height: 1000px;
-    width: 1000px;
-    top: -500px;
-    right: -250px;
-}
-
-.circle-2 {
-    background-color: var(--circle2-color);
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
-    height: 500px;
-    width: 500px;
-    top: 350px;
-    left: 400px;
-}
-
-.circle-3 {
-    background-color: var(--circle3-color);
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
-    height: 250px;
-    width: 250px;
-    top: 100px;
-    left: -100px;
+    overflow: hidden; /* Hides everything out of VH */
 }
 
 /* Navbar */
@@ -67,6 +34,7 @@ body {
 #navbar-brand {
     color: var(--primary-color);
     font-weight: bold;
+    cursor: pointer;
 }
 
 nav {
@@ -75,6 +43,7 @@ nav {
 
 .navbar-nav {
     display: flex;
+    align-items: center;
     list-style: none;
     font-size: 13px;
 }
@@ -97,31 +66,40 @@ main {
     align-items: flex-start;
     padding: 120px;
     padding-bottom: 0;
+    overflow: visible;
 }
 
 #text-content {
-    max-width: 420px;
+    max-width: 380px;
     margin-right: 60px;
 }
 
 .main-title {
     color: var(--primary-color);
-    font-size: 36px;
-    margin-bottom: 2%;
+    max-width: 300px;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .main-text {
     color: black;
     font-weight: lighter;
-    margin-bottom: 15%;
-    line-height: 32px;
+    line-height: 2rem;
+}
+
+/* Animation for Buttons - Gio */
+.buttons-block .btn:hover {
+    transform: translateY(-15px);
 }
 
 .btn {
     text-transform: uppercase;
+    margin-top: 3rem;
     padding: 12px 35px;
-    border-radius: 25px;
+    border-radius: 32px;
     font-weight: bold;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
 }
 
 .buttons-block .btn-primary {
@@ -143,4 +121,68 @@ main {
 
 .ice-cream {
     max-width: 90%;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.ice-cream:hover {
+    transform: translateY(-35px);
+}
+
+/* Background Elements */
+.circle-1 {
+    background-color: var(--circle1-color);
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    height: 1000px;
+    width: 1000px;
+    top: -500px;
+    right: -250px;
+
+    /* Right Way of Positioning
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        clip-path: circle(600px at 95% 100px);
+    */
+}
+
+.circle-2 {
+    background-color: var(--circle2-color);
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    top: 350px;
+    left: 400px;
+
+    /* Right Way of Positioning
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        clip-path: circle(300px at center 900px);
+    */
+}
+
+.circle-3 {
+    background-color: var(--circle3-color);
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    top: 100px;
+    left: -100px;
+
+    /* Right Way of Positioning
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        clip-path: circle(150px at 50px 300px);
+    */
 }
