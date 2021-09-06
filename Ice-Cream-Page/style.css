@@ -1,5 +1,7 @@
+/* Importing Poppins Font-Family - from fonts.google.com */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/* Rooting some project colors */
 :root {
     --background-color: #fdf6f2;
     --primary-color: #fc9fa2;
@@ -8,6 +10,7 @@
     --circle3-color: #ffeee2;
 }
 
+/* Reseting CSS */
 * {
     border: 0;
     margin: 0;
@@ -16,49 +19,50 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Giving Color to Page */
 body {
     background-color: var(--background-color);
     overflow: hidden; /* Hides everything out of VH */
 }
 
 /* Navbar */
-#header-nav {
+#header-nav { /* Navigation Bar Container */
     text-transform: uppercase;
     display: flex;
     width: 100%;
     padding: 20px 30px;
 }
 
-#navbar-brand {
+#navbar-brand { /* Ice Cream Logo */
     color: var(--primary-color);
     font-weight: bold;
     cursor: pointer;
 }
 
-nav {
+nav { /* List of Links Nav */
     margin-left: 120px;
 }
 
-.navbar-nav {
+.navbar-nav { /* Unordered List */
     display: flex;
     align-items: center;
     list-style: none;
     font-size: 13px;
 }
 
-.navbar-nav .nav-item .nav-link {
+.navbar-nav .nav-item .nav-link { /* Styling Anchors */
     margin-right: 50px;
     color: black;
     text-decoration: none;
 }
 
-.nav-link:hover {
+.nav-link:hover { /* Anchor's Hover Animation */
     color: var(--primary-color) !important;
     text-shadow: 0 0 1em var(--circle1-color) !important;
 }
 
 /* Main Content */
-main {
+main { /* Main Container */
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -67,34 +71,33 @@ main {
     overflow: visible;
 }
 
-#text-content {
+#text-content { /* Full Left Column - Text and Buttons */
     width: 380px;
     margin-right: 5rem;
 }
 
-.main-title {
+.main-title { /* Left Column - Title */
     color: var(--primary-color);
     width: 300px;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.main-text {
+.main-text { /* Left Column - Paragraph */
     color: black;
     font-weight: lighter;
     line-height: 2rem;
 }
 
-/* Animation for Buttons - Gio */
-.buttons-block .btn:hover {
+.buttons-block .btn:hover { /* Animation for Buttons - Gio */
     transform: translateY(-15px);
 }
 
-.buttons-block {
+.buttons-block { /* Gap between Text and Buttons */
     margin-top: 3rem;
 }
 
-.btn {
+.btn { /* Styling Buttons */
     text-transform: uppercase;
     padding: 12px 35px;
     border-radius: 32px;
@@ -103,29 +106,28 @@ main {
     transition: all .3s ease-in-out;
 }
 
-.buttons-block .btn-primary {
+.buttons-block .btn-primary { /* Styling Primary Button */
     background-color: var(--primary-color);
     color: white;
     margin-right: 4rem;
 }
 
-.buttons-block .btn-secondary {
+.buttons-block .btn-secondary { /* Styling Secondary Button */
     background-color: white;
     color: var(--primary-color);
 }
 
-/* Image Column */
-.main-img {
+.main-img { /* Right Column - Image Div-Block */
     position: relative;
 }
 
-.ice-cream {
+.ice-cream { /* Image Config */
     width: 90%;
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
 
-.ice-cream:hover {
+.ice-cream:hover { /* Animation for Image Hover */
     transform: translateY(-35px);
 }
 
@@ -191,94 +193,124 @@ main {
 }
 
 /* Media Queries */
-@media screen and (min-width: 1300px) {
-    .main-img {
-        bottom: 60px;
-    }
-}
+@media screen and (min-width: 1200px) { .main-img { bottom: 60px; } } /* Image Alignment */
 
-@media screen and (max-width: 1200px) {
-    main {
+@media screen and (max-width: 1200px) { /* Preventing Image Distortion/Hidden */
+    /* Main Content */
+    main { /* Decreasing Main Padding */
         padding: 100px;
     }
 
-    #text-content {
+    #text-content { /* Decreasing Gap between Left and Right Column */
         margin-right: 2rem;
     }
     
-    /* Background Elements */
+    /* Background Elements - Decreasing its Sizes */
     .circle-1 {
+        height: 200vh;
         clip-path: circle(400px at 90% -50px);
     }
 
     .circle-2 {
-        height: 120vh;
+        height: 200vh;
         clip-path: circle(200px at center 500px);
     }
 
     .circle-3 {
+        height: 200vh;
         clip-path: circle(100px at 50px 300px);
     }
 }
 
-@media screen and (max-width: 1024px) {
-    main {
+@media screen and (max-width: 1024px) { /* Preventing Sooner Wrap */
+    /* Main Content */
+    main { /* Decreasing Main Padding */
         padding: 60px;
     }
 
-    .buttons-block .btn-primary {
+    .buttons-block .btn-primary { /* Decreasing Buttons Gap */
         margin-right: 2rem;
     }
     
-    .ice-cream {
+    /* Image Column */
+    .ice-cream { /* Sizing Image to Fixed-Size */
         width: 420px;
         min-height: 440px;
     }
 }
 
-@media screen and (max-width: 870px) {
-    body {
+@media screen and (max-width: 870px) { /* Mobile Responsive */
+    body { /* Allowing Scrolling */
         overflow-y: visible;
     }
     
-    #header-nav {
+    #header-nav { /* Allowing Links to go Under Page Title */
         display: block;
         text-align: center;
     }
 
-    #navbar-brand {
+    #navbar-brand { /* Creating a Horizontal Line - Dividing Links */
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
-    nav {
+    nav { /* Removing Left-Margin */
         margin-top: 0.5rem;
         margin-left: 0;
     }
 
-    .navbar-nav {
+    .navbar-nav { /* Centering Links to Page Center */
         justify-content: center;
     }
     
-    main {
+    /* Main Content */
+    main { /* Displaying Columns as Blocks */
         display: block;
         width: 100%;
         padding-top: 3rem;
         padding-bottom: 0;
     }
 
-    #text-content {
+    #text-content { /* Aligning Elements and Text to Center */
         text-align: center;
         margin-right: 0;
         width: 100%;
     }
 
-    .main-title {
+    .main-title { /* Aloowing Title to Use 100% of Width */
         width: 100%;
     }
 
-    .main-img {
+    /* Image Column */
+    .main-img { /* Hidden Imperfection at the Image Bottom */
         text-align: center;
         overflow: hidden;
         height: 420px;
+    }
+}
+
+@media screen and (max-width: 600px) { /* Last Query */
+    /* Navbar */
+    #header-nav { /* Decreasing Top Navbar Padding */
+        padding: 10px 15px;
+    }
+    
+    .navbar-nav .nav-item .nav-link { /* Organizing Nav-Links */
+        margin: 0;
+        padding: 8px;
+        text-align: center;
+    }
+
+    /* Main Content */
+    main { /* Removing Main Padding */
+        padding: 0;
+    }
+
+    #text-content { /* Applying Padding only to Text-Block */
+        padding: 16px;
+    }
+
+    /* Background Elements */
+    .circle-1, .circle-2, .circle-3 { /* Updating VH to show Full Circles */
+        height: 100vh;
     }
 }
