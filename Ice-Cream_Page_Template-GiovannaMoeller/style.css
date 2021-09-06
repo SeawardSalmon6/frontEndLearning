@@ -68,13 +68,13 @@ main {
 }
 
 #text-content {
-    max-width: 380px;
-    margin-right: 60px;
+    width: 380px;
+    margin-right: 5rem;
 }
 
 .main-title {
     color: var(--primary-color);
-    max-width: 300px;
+    width: 300px;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
@@ -90,9 +90,12 @@ main {
     transform: translateY(-15px);
 }
 
+.buttons-block {
+    margin-top: 3rem;
+}
+
 .btn {
     text-transform: uppercase;
-    margin-top: 3rem;
     padding: 12px 35px;
     border-radius: 32px;
     font-weight: bold;
@@ -103,10 +106,10 @@ main {
 .buttons-block .btn-primary {
     background-color: var(--primary-color);
     color: white;
+    margin-right: 4rem;
 }
 
 .buttons-block .btn-secondary {
-    margin-left: 100px;
     background-color: white;
     color: var(--primary-color);
 }
@@ -114,11 +117,10 @@ main {
 /* Image Column */
 .main-img {
     position: relative;
-    bottom: 60px;
 }
 
 .ice-cream {
-    max-width: 90%;
+    width: 90%;
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
@@ -132,18 +134,19 @@ main {
     background-color: var(--circle1-color);
     position: absolute;
     z-index: -1;
-    border-radius: 50%;
-    height: 1000px;
-    width: 1000px;
-    top: -500px;
-    right: -250px;
 
-    /* Right Way of Positioning
+    /* Right Way of Positioning */
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
-        clip-path: circle(600px at 95% 100px);
+        clip-path: circle(600px at 90% -50px);
+
+    /* The Way I did
+        height: 1000px;
+        width: 1000px;
+        top: -500px;
+        right: -250px;
     */
 }
 
@@ -151,18 +154,19 @@ main {
     background-color: var(--circle2-color);
     position: absolute;
     z-index: -1;
-    border-radius: 50%;
-    height: 500px;
-    width: 500px;
-    top: 350px;
-    left: 400px;
 
-    /* Right Way of Positioning
+    /* Right Way of Positioning */
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
-        clip-path: circle(300px at center 900px);
+        clip-path: circle(300px at center 600px);
+
+    /* The Way I did
+        height: 500px;
+        width: 500px;
+        top: 350px;
+        left: 400px;
     */
 }
 
@@ -170,17 +174,111 @@ main {
     background-color: var(--circle3-color);
     position: absolute;
     z-index: -1;
-    border-radius: 50%;
-    height: 250px;
-    width: 250px;
-    top: 100px;
-    left: -100px;
 
-    /* Right Way of Positioning
+    /* Right Way of Positioning */
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
         clip-path: circle(150px at 50px 300px);
+    
+    /* The Way I Did
+        height: 250px;
+        width: 250px;
+        top: 100px;
+        left: -100px;
     */
+}
+
+/* Media Queries */
+@media screen and (min-width: 1300px) {
+    .main-img {
+        bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        padding: 100px;
+    }
+
+    #text-content {
+        margin-right: 2rem;
+    }
+    
+    /* Background Elements */
+    .circle-1 {
+        clip-path: circle(400px at 90% -50px);
+    }
+
+    .circle-2 {
+        height: 120vh;
+        clip-path: circle(200px at center 500px);
+    }
+
+    .circle-3 {
+        clip-path: circle(100px at 50px 300px);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        padding: 60px;
+    }
+
+    .buttons-block .btn-primary {
+        margin-right: 2rem;
+    }
+    
+    .ice-cream {
+        width: 420px;
+        min-height: 440px;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    body {
+        overflow-y: visible;
+    }
+    
+    #header-nav {
+        display: block;
+        text-align: center;
+    }
+
+    #navbar-brand {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        margin-top: 0.5rem;
+        margin-left: 0;
+    }
+
+    .navbar-nav {
+        justify-content: center;
+    }
+    
+    main {
+        display: block;
+        width: 100%;
+        padding-top: 3rem;
+        padding-bottom: 0;
+    }
+
+    #text-content {
+        text-align: center;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .main-title {
+        width: 100%;
+    }
+
+    .main-img {
+        text-align: center;
+        overflow: hidden;
+        height: 420px;
+    }
 }
