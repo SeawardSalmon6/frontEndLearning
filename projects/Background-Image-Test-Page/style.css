@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reseting CSS */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Proper Config to Body-Content */
+#body-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Section Similarities */
+#firstSection, #secondSection {
+    margin: 0 auto;
+    border-bottom: 8px solid #222;
+}
+
+/* First Section Styles */
+.hero-container { /* Organizes the space between Section Element and its Content */
+    padding: 70px 45px;
+    position: relative;
+    background: none;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#firstSection .hero-container  { /* Unique styling for the Background Image Section */
+    height: 600px;
+}
+
+.overflow-div { /* Serves as a container to position the Background Image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-img { /* The Image itself styling */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card, .card-header { /* Cards Similarities */
+    margin: 0 auto;
+}
+
+.card { /* Contents (texts) Block */
+    position: relative;
+    width: 100%;
+    padding: 75px 0;
+    max-width: 950px;
+    text-align: center;
+    text-shadow: 2px 4px 4px black;
+}
+
+.card-header { /* Group of title and subtitle elements */
+    max-width: 640px;
+}
+
+.card-title { /* Card-Title */
+    font-size: 3rem;
+}
+
+.card-subtitle { /* Card-Subtitle */
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.card-text { /* Card-Text Content */
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0.8rem auto;
+}
+
+/* Second Section Styles */
+main .card { /* Removes Text-Shadow from others sections but First */
+    text-shadow: none;
+}
+
+#secondSection { /* Second Section Background */
+    background-color: black;
+}
